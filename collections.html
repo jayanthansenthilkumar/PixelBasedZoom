@@ -278,6 +278,53 @@
         </div>
     </div>
 
+    <!-- Product Quick View Modal -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-product-image">
+                    <img id="modalProductImage" src="" alt="Artwork">
+                </div>
+                <div class="modal-product-details">
+                    <h2 id="modalProductTitle"></h2>
+                    <span id="modalProductType" class="artwork-type"></span>
+                    <p id="modalProductArtist" class="artwork-artist"></p>
+                    <div class="modal-price-section">
+                        <span id="modalProductPrice" class="artwork-price"></span>
+                        <span class="stock-status in-stock">In Stock</span>
+                    </div>
+                    <div class="modal-description">
+                        <h3>Description</h3>
+                        <p id="modalProductDescription"></p>
+                    </div>
+                    <div class="modal-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                    <div class="modal-meta-info">
+                        <div class="meta-item">
+                            <span class="meta-label">Dimensions:</span>
+                            <span class="meta-value">24" × 36"</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Medium:</span>
+                            <span id="modalProductMedium" class="meta-value"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Creation Date:</span>
+                            <span class="meta-value">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
