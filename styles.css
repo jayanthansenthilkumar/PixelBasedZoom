@@ -6,17 +6,41 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Remove default scrollbar and add custom styling */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #c9452e #f7f5f0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f5f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c9452e;
+    border-radius: 10px;
+}
+
 body {
     background-color: #f7f5f0;
     color: #3a3026;
     line-height: 1.6;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Dashboard Layout */
 .dashboard-container {
     display: flex;
     min-height: 100vh;
+    position: relative; /* Ensure proper positioning context */
 }
 
 /* Sidebar Styles */
@@ -96,6 +120,9 @@ body {
     flex: 1;
     margin-left: 250px;
     transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes full height */
 }
 
 /* Dashboard Header */
@@ -182,7 +209,9 @@ body {
 
 /* Page Content */
 .page-content {
+    flex: 1; /* Take up available space */
     padding: 2rem;
+    padding-bottom: 4rem; /* Allow space for footer */
 }
 
 .page-header {
@@ -1112,6 +1141,23 @@ body {
 /* Featured Artworks Grid for Dashboard */
 .featured-grid {
     margin-top: 1rem;
+}
+
+/* Footer Styling */
+.dashboard-footer {
+    background-color: #ffffff;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #e1d5c4;
+    margin-top: auto; /* Push to bottom */
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #e1d5c4;
+    margin-top: auto; /* Push to bottom */
 }
 
 /* Responsive Design for Dashboard */
