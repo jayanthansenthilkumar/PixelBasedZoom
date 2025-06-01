@@ -6,6 +6,7 @@
     <title>MonkeyMonkarts - Artistic Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -16,10 +17,10 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#" class="nav-item active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Dashboard</a></li>
                     <li><a href="#" class="nav-item"><i class="fas fa-palette"></i> Artworks</a></li>
                     <li><a href="collections.html" class="nav-item"><i class="fas fa-layer-group"></i> Collections</a></li>
-                    <li><a href="#" class="nav-item"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="cart.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Cart</a></li>
                     <li><a href="#" class="nav-item"><i class="fas fa-chart-line"></i> Analytics</a></li>
                     <li><a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a></li>
                 </ul>
@@ -60,89 +61,273 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-header">
-                    <h1>Your Art Collection</h1>
+                    <h1>Dashboard</h1>
                     <button class="action-btn"><i class="fas fa-plus"></i> Add New Artwork</button>
                 </div>
                 
-                <div class="cart-container">
-                    <div class="cart-items">
-                        <!-- Cart Item 1 -->
-                        <div class="cart-item">
-                            <div class="product-image-container">
-                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" alt="Monkey Abstract Print" class="product-image" data-zoom-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&q=100">
-                                <div class="zoom-lens"></div>
-                                <div class="zoom-result"></div>
-                            </div>
-                            <div class="product-details">
-                                <h2>Monkey Abstract Print</h2>
-                                <p class="price">$125.99</p>
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus">-</button>
-                                    <input type="number" value="1" min="1" class="qty-input">
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="remove-btn">Remove</button>
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Artworks</h3>
+                            <span class="stat-number">124</span>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 12% from last month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Sales</h3>
+                            <span class="stat-number">$12,845</span>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 8% from last month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Customers</h3>
+                            <span class="stat-number">87</span>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 5% from last month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Page Views</h3>
+                            <span class="stat-number">3,542</span>
+                            <span class="stat-trend negative"><i class="fas fa-arrow-down"></i> 3% from last month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sales Chart & Recent Activity -->
+                <div class="dashboard-row">
+                    <div class="chart-container">
+                        <div class="widget-header">
+                            <h2>Sales Overview</h2>
+                            <div class="widget-dropdown">
+                                <select>
+                                    <option>Last 7 days</option>
+                                    <option>Last 30 days</option>
+                                    <option>Last 90 days</option>
+                                </select>
                             </div>
                         </div>
-                        
-                        <!-- Cart Item 2 -->
-                        <div class="cart-item">
-                            <div class="product-image-container">
-                                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&q=80" alt="Jungle Dream Canvas" class="product-image" data-zoom-image="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=1200&q=100">
-                                <div class="zoom-lens"></div>
-                                <div class="zoom-result"></div>
-                            </div>
-                            <div class="product-details">
-                                <h2>Jungle Dream Canvas</h2>
-                                <p class="price">$189.99</p>
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus">-</button>
-                                    <input type="number" value="1" min="1" class="qty-input">
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="remove-btn">Remove</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Cart Item 3 -->
-                        <div class="cart-item">
-                            <div class="product-image-container">
-                                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=300&q=80" alt="Primate Portrait" class="product-image" data-zoom-image="https://images.unsplash.com/photo-1595225476474-87563907a212?w=1200&q=100">
-                                <div class="zoom-lens"></div>
-                                <div class="zoom-result"></div>
-                            </div>
-                            <div class="product-details">
-                                <h2>Primate Portrait</h2>
-                                <p class="price">$159.99</p>
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus">-</button>
-                                    <input type="number" value="1" min="1" class="qty-input">
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="remove-btn">Remove</button>
-                            </div>
+                        <div class="chart-wrapper">
+                            <canvas id="salesChart"></canvas>
                         </div>
                     </div>
                     
-                    <div class="cart-summary">
-                        <h2>Order Summary</h2>
-                        <div class="summary-item">
-                            <span>Subtotal:</span>
-                            <span>$475.97</span>
+                    <div class="activity-container">
+                        <div class="widget-header">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="widget-action">View All</a>
                         </div>
-                        <div class="summary-item">
-                            <span>Shipping:</span>
-                            <span>$15.00</span>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon sold">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Jungle Harmony Sold</h4>
+                                    <p>$329.99 • Just now</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon review">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>New Review</h4>
+                                    <p>★★★★★ for "Primate Dreams" • 1 hour ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon new">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>New Artwork Added</h4>
+                                    <p>Bronze Monkey • 3 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon comment">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>New Comment</h4>
+                                    <p>On "Geometric Primate" • 5 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon sold">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Watercolor Wildlife Sold</h4>
+                                    <p>$219.99 • Yesterday</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="summary-item">
-                            <span>Tax:</span>
-                            <span>$39.08</span>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders & Featured Artworks -->
+                <div class="dashboard-section">
+                    <div class="widget-header section-header">
+                        <h2>Recent Orders</h2>
+                        <a href="#" class="widget-action">View All Orders</a>
+                    </div>
+                    <div class="orders-table-container">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#MON-2305</td>
+                                    <td>John Smith</td>
+                                    <td>May 23, 2023</td>
+                                    <td>$329.99</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td><button class="action-icon"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#MON-2304</td>
+                                    <td>Emily Johnson</td>
+                                    <td>May 22, 2023</td>
+                                    <td>$189.99</td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                    <td><button class="action-icon"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#MON-2303</td>
+                                    <td>Michael Brown</td>
+                                    <td>May 21, 2023</td>
+                                    <td>$459.99</td>
+                                    <td><span class="status-badge processing">Processing</span></td>
+                                    <td><button class="action-icon"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#MON-2302</td>
+                                    <td>Sarah Wilson</td>
+                                    <td>May 20, 2023</td>
+                                    <td>$125.99</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td><button class="action-icon"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#MON-2301</td>
+                                    <td>Robert Davis</td>
+                                    <td>May 19, 2023</td>
+                                    <td>$219.99</td>
+                                    <td><span class="status-badge cancelled">Cancelled</span></td>
+                                    <td><button class="action-icon"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Featured Artworks -->
+                <div class="dashboard-section">
+                    <div class="widget-header section-header">
+                        <h2>Featured Artworks</h2>
+                        <a href="collections.html" class="widget-action">View All Artworks</a>
+                    </div>
+                    <div class="artwork-grid featured-grid">
+                        <!-- Artwork 1 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=400&q=80" alt="Jungle Harmony">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Jungle Harmony</h3>
+                                <span class="artwork-type">Acrylic Painting</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Jane Goodart</span>
+                                    <span class="artwork-price">$329.99</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="summary-item total">
-                            <span>Total:</span>
-                            <span>$530.05</span>
+                        
+                        <!-- Artwork 2 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1544211412-2a32426e7fd5?w=400&q=80" alt="Primate Dreams">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Primate Dreams</h3>
+                                <span class="artwork-type">Digital Art</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Michael Simian</span>
+                                    <span class="artwork-price">$189.99</span>
+                                </div>
+                            </div>
                         </div>
-                        <button class="checkout-btn">Complete Purchase</button>
+                        
+                        <!-- Artwork 3 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?w=400&q=80" alt="Banana Abstract">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Banana Abstract</h3>
+                                <span class="artwork-type">Mixed Media</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Anna Primatologist</span>
+                                    <span class="artwork-price">$249.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 4 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1579541591970-e5a7eb4e1600?w=400&q=80" alt="Swinging Serenity">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Swinging Serenity</h3>
+                                <span class="artwork-type">Oil Painting</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Paul Chimpart</span>
+                                    <span class="artwork-price">$459.99</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,6 +339,49 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="zoom.js"></script>
+    <script>
+        // Initialize sales chart
+        document.addEventListener('DOMContentLoaded', function() {
+            var ctx = document.getElementById('salesChart').getContext('2d');
+            var salesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Sales ($)',
+                        data: [1200, 1900, 1500, 2500, 1800, 2800, 3200],
+                        backgroundColor: 'rgba(201, 69, 46, 0.1)',
+                        borderColor: '#c9452e',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#c9452e',
+                        pointRadius: 4,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.2)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
