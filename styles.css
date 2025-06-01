@@ -410,12 +410,271 @@ body {
     background-color: #a73723;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
+/* Collection Page Styles */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(93, 74, 52, 0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-group label, .sort-controls label {
+    font-weight: 500;
     color: #5d4a34;
+}
+
+.filter-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f7f5f0;
+    border: 1px solid #e1d5c4;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #5d4a34;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #c9452e;
+    border-color: #c9452e;
+    color: white;
+}
+
+.sort-select {
+    padding: 0.5rem;
+    border: 1px solid #e1d5c4;
+    border-radius: 20px;
+    background-color: #f7f5f0;
+    color: #5d4a34;
+    outline: none;
+    cursor: pointer;
+}
+
+.collection-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #5d4a34;
+    margin-bottom: 1.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #c9452e;
+    border-radius: 2px;
+}
+
+.featured-collection {
+    margin-bottom: 2rem;
+}
+
+.collection-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(93, 74, 52, 0.15);
+}
+
+.collection-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collection-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.collection-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.collection-stats {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-color: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.artwork-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(93, 74, 52, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artwork-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(93, 74, 52, 0.15);
+}
+
+.artwork-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artwork-card:hover .artwork-image img {
+    transform: scale(1.05);
+}
+
+.artwork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.artwork-card:hover .artwork-overlay {
+    opacity: 1;
+}
+
+.quick-view, .add-to-cart {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #5d4a34;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.quick-view:hover, .add-to-cart:hover {
+    background-color: #c9452e;
+    color: white;
+}
+
+.artwork-details {
+    padding: 1.2rem;
+}
+
+.artwork-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #5d4a34;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.artwork-type {
+    color: #777;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.artwork-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.artwork-artist {
+    color: #5d4a34;
+    font-size: 0.9rem;
+}
+
+.artwork-price {
+    color: #c9452e;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f5f0;
+    border: 1px solid #e1d5c4;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn.active, .page-btn:hover {
+    background-color: #c9452e;
+    color: white;
+    border-color: #c9452e;
+}
+
+.page-dots {
+    margin: 0 0.5rem;
 }
 
 /* Responsive Design */
@@ -450,6 +709,24 @@ footer {
     .zoom-result {
         width: 200px;
         height: 200px;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .sort-controls {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .sort-select {
+        width: 100%;
+    }
+    
+    .artwork-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 }
 
@@ -499,5 +776,34 @@ footer {
         width: 250px;
         height: 250px;
         right: -260px;
+    }
+    
+    .collection-banner {
+        height: 200px;
+    }
+    
+    .collection-info {
+        padding: 1rem;
+    }
+    
+    .collection-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .artwork-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .artwork-image {
+        height: 180px;
+    }
+    
+    .artwork-details {
+        padding: 0.8rem;
+    }
+    
+    .artwork-details h3 {
+        font-size: 1rem;
     }
 }

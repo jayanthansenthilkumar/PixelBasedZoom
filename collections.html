@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeyMonkarts - Art Collections</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span>MonkeyMonkarts</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-palette"></i> Artworks</a></li>
+                    <li><a href="collections.html" class="nav-item active"><i class="fas fa-layer-group"></i> Collections</a></li>
+                    <li><a href="index.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                    <li><a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="#" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search collections...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="User Avatar">
+                        <span>Artist Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>Art Collections</h1>
+                    <button class="action-btn"><i class="fas fa-plus"></i> Create Collection</button>
+                </div>
+                
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label>Filter By:</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Paintings</button>
+                            <button class="filter-btn">Digital Art</button>
+                            <button class="filter-btn">Sculptures</button>
+                            <button class="filter-btn">Prints</button>
+                        </div>
+                    </div>
+                    <div class="sort-controls">
+                        <label>Sort By:</label>
+                        <select class="sort-select">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Featured Collection -->
+                <div class="collection-section">
+                    <h2 class="section-title">Featured Collection: Primate Paradise</h2>
+                    <div class="featured-collection">
+                        <div class="collection-banner">
+                            <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&q=80" alt="Primate Paradise Collection">
+                            <div class="collection-info">
+                                <h3>Primate Paradise</h3>
+                                <p>A vibrant exploration of monkey life through various artistic mediums</p>
+                                <span class="collection-stats">24 Artworks • 3 Artists</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artwork Grid -->
+                <div class="collection-section">
+                    <h2 class="section-title">Browse All Artworks</h2>
+                    <div class="artwork-grid">
+                        <!-- Artwork 1 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=400&q=80" alt="Jungle Harmony">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Jungle Harmony</h3>
+                                <span class="artwork-type">Acrylic Painting</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Jane Goodart</span>
+                                    <span class="artwork-price">$329.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 2 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1544211412-2a32426e7fd5?w=400&q=80" alt="Primate Dreams">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Primate Dreams</h3>
+                                <span class="artwork-type">Digital Art</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Michael Simian</span>
+                                    <span class="artwork-price">$189.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 3 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?w=400&q=80" alt="Banana Abstract">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Banana Abstract</h3>
+                                <span class="artwork-type">Mixed Media</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Anna Primatologist</span>
+                                    <span class="artwork-price">$249.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 4 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1579541591970-e5a7eb4e1600?w=400&q=80" alt="Swinging Serenity">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Swinging Serenity</h3>
+                                <span class="artwork-type">Oil Painting</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Paul Chimpart</span>
+                                    <span class="artwork-price">$459.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 5 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1598008663858-9e83adbd45f3?w=400&q=80" alt="Bronze Monkey">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Bronze Monkey</h3>
+                                <span class="artwork-type">Sculpture</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Sarah Sculptor</span>
+                                    <span class="artwork-price">$899.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 6 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1562583489-bf23ac555bb0?w=400&q=80" alt="Monkey Business">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Monkey Business</h3>
+                                <span class="artwork-type">Limited Print</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Robert Primographer</span>
+                                    <span class="artwork-price">$125.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 7 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1515536765-9b2a70c4b333?w=400&q=80" alt="Geometric Primate">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Geometric Primate</h3>
+                                <span class="artwork-type">Digital Print</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Geometric Designs</span>
+                                    <span class="artwork-price">$89.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Artwork 8 -->
+                        <div class="artwork-card">
+                            <div class="artwork-image">
+                                <img src="https://images.unsplash.com/photo-1536589961747-e239b1abbec9?w=400&q=80" alt="Watercolor Wildlife">
+                                <div class="artwork-overlay">
+                                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <div class="artwork-details">
+                                <h3>Watercolor Wildlife</h3>
+                                <span class="artwork-type">Watercolor</span>
+                                <div class="artwork-meta">
+                                    <span class="artwork-artist">By Maria Monkeybrush</span>
+                                    <span class="artwork-price">$219.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn">8</button>
+                        <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2023 MonkeyMonkarts. Creating Primate Perfection.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
